@@ -1,111 +1,207 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-body{
-    background-color: rgb(80, 77, 77);
-}
-/* Styling the topnav */
-.topnav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: rgb(61, 58, 58);
+    background-color:whitesmoke;
+    font-family:"OnePieceFont", cursive;
     
 }
-.profile{
-    border: 1px solid whitesmoke;
-    border-radius: 5px;
-    background-color: rgb(56, 54, 54);
-    padding: 5px;
-    color: white;
-}
-.ea{
-    color: gray;
-    text-decoration: none;
-    font-size: 15px;
-    
-}
-
-/* Styling the navbar */
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(27, 26, 26);
-    padding: 8px;
-    padding-left: 30px;
-    align-items: center;
-    position: sticky;
+header{
+    position: sticky;   /* To make the header stick at the top */
     top: 0;
-    font-size: 15px;
+    z-index: 1000;
+    padding-top: 10px;
+    background-color: whitesmoke;
+    
+}
+.gear5{
+    width: 60px;
+    height: 60px;
+    transition: all 0.2s linear;
 }
 
-.nav{
-    display: flex;
-    gap: 20px;
-    align-items: center;
+/* adjusting the logo size */
+.logo{
+    width:150px;
+    height: 50px;
+    transition: all 0.2s linear
 }
-.nav *{
+
+/* hover effect for the logo */
+.logo:hover{
+    width:160px;
+    height: 53px;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+nav a{
     text-decoration: none;
-    color: white;
-}
-.downloadnow{
-    background-color: red;
-    padding: 10px;
-    border: 1px solid red;
-    border-radius: 7px;
-    color: white;
-}
-
-/* navbar hover effects */
-.nav a:hover{
-   text-decoration: underline;
+    color: black;
+    font-size: 20px;
+    padding: 2px;
+    padding-top: 7px;
+    transition: all 0.2s linear;
+    border-radius: 10px;
+    position: relative;
+    display: inline-block
 }
 
-/* .content{
-    height: 800px;
-    width: 400px;
-    color: orange;
-} */
+/* hover effect for all the links in navbar */
+nav a:hover{
+    font-size: 22px;
+    color: #D32F2F;
+    text-shadow: 2px 2px 15px #D32F2F;
 
-.amped{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    align-items: center;
-    margin-top: 90px;
+}
+
+/* pseudo-element to make the easter egg (mugiwara) appear */
+nav a::before{
+    content: "";
+    position: absolute;
+    top: -2px; 
+    left: 6px;
+    width: 40px;
+    height: 40px;
+    background-image: url("mugiwara.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: rotate(-15deg) translateY(10px); 
+    transition: all 0.3s ease-in-out; 
+    pointer-events: none;
     
 }
 
-.amped-element{
-    margin: 10px;
+/* applying transition to mugiwara to make it's appearance smooth */
+nav a:hover::before{
+    opacity: 1;
+    transform: rotate(-3deg) translateY(0);
 }
 
-.amped h2{
-    font-family: "Teko", sans-serif;
-    transform: scaleX(0.6);
-    line-height: 0.9;
-    font-size: 60px;
-}
-.amped-logo{
-    width: 90px;
-    height:90px;
+/* css for the parallax effect on the sea and the ship */
+body {
+  margin: 0;
+  overflow-x: hidden; /* Prevents horizontal scrollbars */
+ 
 }
 
-.amped button{
-    background-color: red;
-    padding:8px;
-    color: white;
-    border: 1px solid red;
-    border-radius: 5px;
+/* to be able to scroll until the ship reaches the very end */
+.scroll-wrapper{
+        height: 1500px;
+        position: relative;
 }
-.footer{
-    height: 800px;
-    width: 400px;
-    color: orange;
+/* contains both the back and the front layers. make it sticky so that it does not move */
+.parallax-container {
+  position: sticky;
+  top: 10%;
+  height: 50%; /* Make it tall so there is room to scroll */
+  width: 90%;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 50px;
 }
+/* css for the back layer of the effect */
+.sea-background {
+  position: absolute; /* Keeps the sea visible while scrolling */
+  top: 75;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  background-image: url('layer-back.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* css for the ship */
+.ship {
+  position: absolute;
+  top: 25%; /* Adjust based on your sea's horizon */
+  left: -471%; /* Start the ship off-screen to the left */
+  width: 300px; /* Adjust size of your ship */
+  z-index: 10;
+  
+  background-color: transparent;
+  transform: scaleX(-1);
+  width: 40vw;
+  height: 70vh;
+  
+}
+.welcome{
+    z-index: 8;
+    color: black;
+    font-size: 8rem;
+    position:absolute;
+    left: 18%;
+    top: 5%;
+    text-shadow: 2px 2px 10px rgb(52, 147, 255);
+    text-decoration: underline;
+    background-color: transparent;
+}
+.ship-message{
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    text-shadow: 2px 2px 10px rgb(52, 147, 255);
+    color: rgb(35, 33, 33);
+    background-color: transparent;
+    z-index: 8;
+    
+}
+.parallax-section {
+  /* Set a height for the window */
+  height: 500px;
+
+  /* The magic property */
+  background-attachment: fixed;
+
+  /* Centering and scaling the image */
+  background-image: url('your-image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-section {
+  height: 400px;
+  background-color: white;
+  padding: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: "OnePieceFont";
+    src: url("Pirata_One/PirataOne-Regular.ttf") format("truetype");
+}
+/* @keyframes appear {
+
+    from{
+        opacity: 0;
+        
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+div{
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+} */
