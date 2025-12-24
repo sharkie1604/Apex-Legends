@@ -32,3 +32,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.error("GSAP did not load correctly.");
   }
 });
+
+
+
+const cards = document.querySelectorAll('.character-info div');
+
+
+cards.forEach(card => {
+  
+  const audio = card.querySelector('audio');
+
+  
+  card.addEventListener('mouseenter', () => {
+    if (audio) {
+      audio.currentTime = 0; 
+      audio.play().catch(error => {
+        console.log("Browser blocked autoplay. Click anywhere on the page first!");
+      });
+    }
+  });
+
+ 
+  card.addEventListener('mouseleave', () => {
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+});

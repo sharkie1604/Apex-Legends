@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color:whitesmoke;
+    
     font-family:"OnePieceFont", cursive;
     
 }
@@ -155,25 +155,80 @@ body {
     z-index: 8;
     
 }
-.parallax-section {
-  /* Set a height for the window */
-  height: 500px;
 
-  /* The magic property */
-  background-attachment: fixed;
+/* styling the section 2 */
 
-  /* Centering and scaling the image */
-  background-image: url('your-image.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.characters h1{
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 7rem;
+}
+.character-head{
+    background-color: transparent;
+    animation: character-div linear;
+    animation-timeline: view();
+    animation-range: entry 30% cover 70%;
+    
 }
 
-.content-section {
-  height: 400px;
-  background-color: white;
-  padding: 50px;
+.character-info{
+    width: 90vw;
+    height: 70vh;
+    
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    margin: 0 auto;
+    
+    border-radius: 50px;
+    padding: 2rem;
+    animation: character-section ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+
 }
+
+.character-info div{
+    height: 80%;
+    border-radius: 25px;
+    animation: character-grid ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+}
+.grid-element img{
+    position: absolute;
+    
+}
+.luffy{
+    background-color: #D32F2F;
+    transition: all 0.2s ease-in-out;
+}
+.zoro{
+    background-color: #375949;
+    transition: all 0.2s ease-in-out;
+}
+.sanji{
+    background-color: #e0b002;
+    transition: all 0.2s ease-in-out;
+}
+.robin{
+    background-color: #480776;
+    transition: all 0.2s ease-in-out;
+}
+.luffy:hover, .zoro:hover, .sanji:hover, .robin:hover{
+    transform: scale(1.05);
+}
+.sectest{
+    height: 100%;
+    width: 100%;
+    background-color: #425a79;
+    z-index: 1000000;
+}
+
+
+
+
+
 
 
 
@@ -189,10 +244,11 @@ body {
     font-family: "OnePieceFont";
     src: url("Pirata_One/PirataOne-Regular.ttf") format("truetype");
 }
-/* @keyframes appear {
+@keyframes character-div {
 
     from{
         opacity: 0;
+        transform: translateX(-50%);
         
     }
     to{
@@ -200,8 +256,23 @@ body {
         transform: translateX(0px);
     }
 }
-div{
-    animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 0 cover 40%;
-} */
+@keyframes character-grid{
+    from{
+        border-radius: 800px;
+    }
+    to{
+        border-radius: 25px;
+    }
+}
+@keyframes character-section {
+    from{
+        opacity: 0;
+        
+        transform: translateX(50%)
+    }
+    to{
+       
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
