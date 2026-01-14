@@ -1,7 +1,3 @@
-// JS code for the movement of Going Merry. It will register a scroll and
-//then change the properties of ship. If GSAP is unable to load from the
-// source provided it will display the error
-
 document.addEventListener("DOMContentLoaded", (event) => {
   if (typeof gsap !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -31,4 +27,23 @@ document.addEventListener("DOMContentLoaded", (event) => {
   } else {
     console.error("GSAP did not load correctly.");
   }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll(".navlinks").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }));
 });
