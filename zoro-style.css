@@ -1,58 +1,61 @@
+/* just as the html code i only wrote the css for the luffy-style.css file */
+/* then copied it all throughout my other webpages */
+/* just changed the background image and color scheme of everything based on the character */
+
+
+
+
+
 @font-face{
     font-family: "OnePieceFont";
     src: url("Pirata_One/PirataOne-Regular.ttf") format("truetype");
-
 }
-
-
-
-
 *{
     padding: 0;
-    margin: 0;
+    margin:0;
     box-sizing: border-box;
     font-family: "OnePieceFont", cursive;
 }
 :root{
-    --luffy-red: #D32F2F;
-    --luffy-dark: #8a1c1c;
+    --zoro-green: #375949;
+    --zoro-accent:#57a87d;
+    --zoro-dark: #1a2e25;
     --gold: #ffca3a;
     --text-light: #f4f4f4;
-    --header-height: 84.5px;
+    --header-height:84.5px;
 }
-
 body{
     background-color: #1a1a1a;
     color: var(--text-light);
-    overflow-x: hidden;
+    overflow-x:hidden;
 }
 .header{
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding-top:10px;
+    padding-top: 10px;
     background-color: #f4f4f4;
     background-image: url("haki.png");
-    border-bottom:2px solid var(--luffy-red);
+    border-bottom: 2px solid var(--zoro-green);
 }
 .navbar{
-    display: flex;
+    display:flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    padding:0 5%;
     width: 100%;
 }
 .logo{
     width: 150px;
-    height:50px;
-    transition: all 0.2s linear;
+    height: 50px;
+    transition:all 0.2s linear;
 }
 .logo:hover{
     width: 160px;
-    height:53px;
+    height: 53px;
 }
 .nav-menu{
-    display:flex;
+    display: flex;
     align-items: center;
     gap: 20px;
 }
@@ -60,24 +63,23 @@ body{
     text-decoration: none;
     color: black;
     font-size: 20px;
-    padding: 5px;
-    transition: all 0.2s linear;
+    padding:5px;
+    transition:all 0.2s linear;
     position: relative;
 }
 .navlinks:hover{
     font-size: 22px;
-    color: var(--luffy-red);
-    text-shadow: 2px 2px 15px var(--luffy-red);
+    color: var(--zoro-green);
+    text-shadow: 2px 2px 15px var(--zoro-green);
 }
 .gear5{
     width: 60px;
-    height: 60px;
+    height:60px;
     transition: all 0.2s linear;
 }
-
 .hamburger{
     display: none;
-    cursor: pointer;
+    cursor:pointer;
     flex-direction: column;
     gap: 5px;
     z-index: 1001;
@@ -85,70 +87,69 @@ body{
 .bar{
     display: block;
     width: 25px;
-    height: 3px;
+    height:3px;
     background-color: black;
     transition: all 0.3s ease-in-out;
-    border-radius: 5px;
+    border-radius:5px;
 }
 .hero-section{
-    min-height: calc(100vh - var(--header-height));
+    min-height:calc(100vh - var(--header-height));
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
-    background: radial-gradient(circle at 70% 50%, #4a0f0f 0%, #1a1a1a 70%);
+    background:radial-gradient(circle at 70% 50%, var(--zoro-dark) 0%, #0c1411 70%);
     position: relative;
     overflow: hidden;
 }
 .hero-content{
     flex: 1;
     z-index: 2;
-    animation: slideInLeft 1s ease-out;
+    animation:slideInLeft 1s ease-out;
 }
 .subtitle{
     font-size: 2rem;
-    color:var(--gold);
-    margin-bottom: -10px;
+    color: var(--gold);
+    margin-bottom:-10px;
     opacity: 0.8;
 }
 .title{
-    font-size: 8rem;
+    font-size:8rem;
     line-height: 0.9;
-    text-shadow:4px 4px 0px var(--luffy-dark);
+    text-shadow: 4px 4px 0px var(--zoro-dark);
 }
 .title span{
-    color: var(--luffy-red);
+    color: var(--zoro-green);
     font-size: 10rem;
     display: block;
 }
 .description{
-    font-family:sans-serif;
+    font-family: sans-serif;
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 500px;
-    margin: 20px 0;
-    border-left:4px solid var(--luffy-red);
+    margin:20px 0;
+    border-left: 4px solid var(--zoro-green);
     padding-left: 15px;
     color: #ccc;
 }
 .stats-grid{
-    display: flex;
-    gap:20px;
+    display:flex;
+    gap: 20px;
     margin-top: 30px;
 }
 .stat-box{
     background: rgba(255, 255, 255, 0.05);
     padding: 15px;
-    border:1px solid var(--luffy-red);
+    border:1px solid var(--zoro-green);
     border-radius: 10px;
-    min-width:120px;
+    min-width: 120px;
     backdrop-filter: blur(5px);
 }
 .stat-box h3{
-    color: var(--luffy-red);
+    color: var(--zoro-green);
     font-size: 1.5rem;
     margin-bottom: 5px;
-
 }
 .stat-box p{
     font-family: sans-serif;
@@ -158,12 +159,11 @@ body{
     flex: 1;
     height: 90vh;
     display: flex;
-    align-items:flex-end;
+    align-items: flex-end;
     justify-content: center;
     position: relative;
 }
-
-.luffy-main-img{
+.char-main-img{
     height: 90%;
     width: auto;
     object-fit: contain;
@@ -175,7 +175,7 @@ body{
     position: absolute;
     width: 600px;
     height: 600px;
-    background: var(--luffy-red);
+    background: var(--zoro-accent);
     border-radius: 50%;
     filter: blur(100px);
     opacity: 0.2;
@@ -185,23 +185,19 @@ body{
     transform: translate(-50%, -50%);
     animation: pulse 3s infinite alternate;
 }
-
-
-
-
-.gears-section{
+.techniques-section{
     padding: 5rem 5%;
     background-image: url("haki.png");
-    background-color: #111;
+    background-color: #0c1411;
     text-align: center;
-    border-top: 2px solid var(--luffy-red);
+    border-top: 2px solid var(--zoro-green);
 }
 .section-title{
     font-size: 5rem;
     color: white;
     margin-bottom: 3rem;
     text-decoration: underline;
-    text-decoration-color: var(--luffy-red);
+    text-decoration-color: var(--zoro-green);
 }
 .cards-container{
     display: grid;
@@ -213,51 +209,29 @@ body{
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    /* background-color: #000; */
     transition: 0.4s ease;
     cursor: pointer;
     /* border: 2px solid transparent; */
 }
-
 .card:hover{
     border: 2px solid var(--gold);
     transform: scale(1.05);
-    
-    box-shadow: 0 0 20px rgba(211, 47, 47, 0.4);
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(55, 89, 73, 0.4);
 }
 
 
-.gear-2{
-    background: linear-gradient(to bottom,transparent,black),url('luffy-gear2.png');
-    background-size: cover;
-    
-    
-    background-position: top;
-}
-.gear-3{
-    background: linear-gradient(to bottom, transparent,black), url('luffy-gear3.png');
-    background-size: cover;
-    background-position: center;
-}
-.gear-4{
-    background: linear-gradient(to bottom,transparent, black), url('luffy-gear4.png');
-    background-size: cover;
-    
-    background-position: center;
 
-}
-.gear-5{
-    background: linear-gradient(to bottom, transparent,black),url('luffy-gear5.png');
-    background-size: cover;
-    background-position: center;
 
-}
-
+.tech-1{background: linear-gradient(to bottom, transparent, black), url('zoro111.png'); background-size: cover; background-position: top; }
+.tech-2{background: linear-gradient(to bottom, transparent, black), url('zoro22.png'); background-size: cover; background-position: left; }
+.tech-3{background: linear-gradient(to bottom, transparent, black), url('santoryu.png'); background-size: cover; background-position: center; }
+.tech-4{background: linear-gradient(to bottom, transparent, black), url('zoro4.png'); background-size: cover; background-position: center; }
 
 
 
 .card-content{
-    position:absolute;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -272,7 +246,7 @@ body{
 }
 .card h3{
     font-size: 2.5rem;
-    color: var(--luffy-red);
+    color: var(--zoro-green);
 }
 .card p{
     font-family: sans-serif;
@@ -297,7 +271,7 @@ body{
 }
 .footer-column h3, .footer-column h4{
     color: var(--gold);
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
     font-family: "OnePieceFont", cursive;
     font-size: 1.5rem;
 }
@@ -314,8 +288,8 @@ body{
     transition: color 0.3s;
 }
 .footer-column a:hover{
-    color: var(--luffy-red);
-    text-shadow: 1px 1px 5px rgb(196, 189, 189);
+    color: var(--zoro-green);
+    text-shadow: 1px 1px 5px rgba(87, 168, 125, 0.8);
 }
 .footer-bottom{
     text-align: center;
@@ -328,26 +302,57 @@ body{
 
 
 
-/*animations */
+
+
+
+
+
+
+
+
 @keyframes slideInLeft{
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
+    from{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 @keyframes float{
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 @keyframes pulse{
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
-    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.4; }
+    0%{
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.2;
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.4;
+    }
 }
 
 
 
 
-/* trying to make responsive*/
-@media (max-width: 1038px){
+
+
+
+
+
+
+
+@media(max-width: 1038px){
     .hamburger{
         display: flex;
     }
@@ -373,34 +378,44 @@ body{
         margin: 1.5rem 0;
         font-size: 2rem;
     }
+
+    
+    
+    
     .hamburger.active .bar:nth-child(2){
         opacity: 0;
     }
     .hamburger.active .bar:nth-child(1){
         transform: translateY(8px) rotate(45deg);
-    
     }
     .hamburger.active .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    
+    
     .hero-section{
         flex-direction: column-reverse;
-        justify-content:center;
+        justify-content: center;
         text-align: center;
-        padding-top:20px;
+        padding-top: 20px;
         height: auto;
     }
     .hero-content{
         margin-top: -50px;
-        z-index:3;
+        z-index: 3;
         padding-bottom: 2rem;
     }
-    .title{ font-size: 5rem; }
-    .title span{ font-size: 6rem; }
+    .title{
+        font-size: 5rem;
+    }
+    .title span{
+        font-size: 6rem;
+    }
     .description{
         margin: 20px auto;
         border-left: none;
-        border-bottom: 3px solid var(--luffy-red);
+        border-bottom: 3px solid var(--zoro-green);
         padding-bottom: 10px;
         padding-left: 0;
     }
@@ -409,7 +424,7 @@ body{
         width: 100%;
         align-items: center;
     }
-    .luffy-main-img{
+    .char-main-img{
         height: 100%;
     }
     .stats-grid{
